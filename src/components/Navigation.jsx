@@ -1,11 +1,22 @@
 import React, { useContext } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import Search from "@/svg/SearchIcon";
 import { PokemonContext } from "@/context/PokemonContext";
 
 const Navigation = () => {
-  const { numero } = useContext(PokemonContext);
-  console.log(numero);
+  const { onInputChange, valueSearch, onResetForm } =
+    useContext(PokemonContext);
+
+  const navigate = useNavigate();
+
+  const onSearchSubmit = (e) => {
+    e.preventDefault();
+    navigate("/search", {
+      state: valueSearch,
+    });
+
+    onResetForm();
+  };
 
   return (
     <>
@@ -18,15 +29,15 @@ const Navigation = () => {
           />
         </Link>
 
-        <form className="flex items-center gap-2">
+        <form className="flex items-center gap-2" onSubmit={onSearchSubmit}>
           <div className="flex items-center gap-2 border-2 border-solid  border-[#555] py-[15px] px-[10px] rounded-[25px]">
             <Search className="w-[20px] h-[20px] stroke-[#555]" />
             <input
               type="search"
               name="valueSearch"
               id=""
-              /* value={valueSearch}
-              onChange={onInputChange} */
+              value={valueSearch}
+              onChange={onInputChange}
               placeholder="Buscar nombre de pokemon"
               className="w-[300px] border-none outline-none text-[15px]"
             />

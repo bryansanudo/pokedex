@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { PokemonContext } from "@/context/PokemonContext";
 
 const FilterBar = () => {
+  const { active } = useContext(PokemonContext);
+
   return (
     <div
-      className={`flex justify-center text-[#555] bg-[#f2f2f2] h-full pt-[140px] transition-all duration-300 ease-linear `}
+      className={`flex justify-center text-[#555] bg-[#f2f2f2] h-full pt-[140px] transition-all duration-300 ease-linear fixed top-0  w-[250px] ${
+        active ? "left-0" : "left-[-300px]"
+      } `}
     >
       <div className="flex flex-col gap-5">
         <span className="text-3xl">Tipo</span>
