@@ -4,7 +4,7 @@ import CardPokemon from "@/components/CardPokemon";
 import Loader from "@/components/Loader";
 
 const PokemonList = () => {
-  const { allPokemons, loading } = useContext(PokemonContext);
+  const { allPokemons, loading, filteredPokemons } = useContext(PokemonContext);
 
   return (
     <>
@@ -12,9 +12,19 @@ const PokemonList = () => {
         <Loader />
       ) : (
         <div className="grid gap-5 grid-cols-[repeat(4,1fr)] max-w-[1200px] my-0 mx-auto ">
-          {allPokemons.map((pokemon) => (
-            <CardPokemon pokemon={pokemon} key={pokemon.id} />
-          ))}
+          {filteredPokemons.length ? (
+            <>
+              {filteredPokemons.map((pokemon) => (
+                <CardPokemon pokemon={pokemon} key={pokemon.id} />
+              ))}
+            </>
+          ) : (
+            <>
+              {allPokemons.map((pokemon) => (
+                <CardPokemon pokemon={pokemon} key={pokemon.id} />
+              ))}
+            </>
+          )}
         </div>
       )}
     </>

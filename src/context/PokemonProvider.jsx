@@ -36,7 +36,7 @@ const PokemonProvider = ({ children }) => {
   const getGlobalPokemons = async () => {
     const baseURL = "https://pokeapi.co/api/v2/";
 
-    const res = await fetch(`${baseURL}pokemon?limit=650&offset=0`);
+    const res = await fetch(`${baseURL}pokemon?limit=649&offset=0`);
     const data = await res.json();
 
     const promises = data.results.map(async (pokemon) => {
@@ -70,6 +70,50 @@ const PokemonProvider = ({ children }) => {
     setOffset(offset + 50);
   };
 
+  const [typeSelected, setTypeSelected] = useState({
+    grass: false,
+    normal: false,
+    fighting: false,
+    flying: false,
+    poison: false,
+    ground: false,
+    rock: false,
+    bug: false,
+    ghost: false,
+    steel: false,
+    fire: false,
+    water: false,
+    electric: false,
+    psychic: false,
+    ice: false,
+    dragon: false,
+    dark: false,
+    fairy: false,
+    unknow: false,
+    shadow: false,
+  });
+  const [filteredPokemons, setFilteredPokemons] = useState([]);
+
+  const handleCheckbox = (e) => {
+    setTypeSelected({
+      ...typeSelected,
+      [e.target.name]: e.target.checked,
+    });
+
+    if (e.target.checked) {
+      const filteredResults = globalPokemons.filter((pokemon) =>
+        pokemon.types.map((type) => type.type.name).includes(e.target.name)
+      );
+      setFilteredPokemons([...filteredPokemons, ...filteredResults]);
+    } else {
+      const filteredResults = filteredPokemons.filter(
+        (pokemon) =>
+          !pokemon.types.map((type) => type.type.name).includes(e.target.name)
+      );
+      setFilteredPokemons([...filteredResults]);
+    }
+  };
+
   return (
     <PokemonContext.Provider
       value={{
@@ -84,6 +128,8 @@ const PokemonProvider = ({ children }) => {
         setLoading,
         active,
         setActive,
+        handleCheckbox,
+        filteredPokemons,
       }}
     >
       {children}
