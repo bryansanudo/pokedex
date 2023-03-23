@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.water {
+	background-color:#4592c4;
+}
+
+.grass {
+	background-color: #9bcc50;
+}
+
+.poison {
+	background-color: #7e0058;
+}
+
+.fire {
+	background-color: #ff7402;
+}
+
+.bug {
+	background-color: #729f3f;
+}
+
+.dragon {
+	background-color:linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+}
+
+.flying {
+	background-color: #3dc7ef;
+}
+
+.ground {
+	background-color:  #ab9842;
+}
+
+.steel {
+	background-color: #9eb7b8;
+}
+
+.psychic {
+	background-color: #f366b9;
+}
+
+.ice {
+	background-color: #51c4e7;
+}
+
+.ghost {
+	background-color: #4d5b64;
+}
+
+.normal {
+	background-color:  #a4acaf;
+}
+
+.rock {
+	background-color: #a38c21;
+}
+
+.electric {
+	background-color:  #bba909;
+}
+
+.fighting {
+	background-color: #d56723;
+}
+
+.fairy {
+	background-color:  #fdb9e9;
+}
+
+.dark {
+	background-color: #707070;
+}
+
+.group-type {
+	display: flex;
+	gap: 10px;
+
+	margin-left: 15px;
+}
+
+.group-type label {
+	cursor: pointer;
+}
