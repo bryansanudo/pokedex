@@ -16,7 +16,7 @@ const CardPokemon = ({ pokemon }) => {
       </div>
       <div className="p-[15px]">
         <span className="block text-[#888] mb-[15px]">N° {pokemon.id}</span>
-        <h3 className="text-[#333]">{pokemon.name}</h3>
+        <h3 className="text-[#333] capitalize">{pokemon.name}</h3>
         <div className="flex gap-2 mt-10px">
           {pokemon.types.map((type) => (
             <span
