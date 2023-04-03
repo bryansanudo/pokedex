@@ -9,7 +9,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="flex max-w-[1200px] my-0 mx-auto">
+      {/* <div className="flex max-w-[1200px] my-0 mx-auto">
         <div
           className="flex items-center gap-4 mb-[20px] cursor-pointer"
           onClick={() => setActive(!active)}
@@ -17,7 +17,7 @@ const HomePage = () => {
           <FilterIcon className="w-[30px] h-[30px] stroke-[#555]" />
           <span>Filtrar</span>
         </div>
-      </div>
+      </div> */}
 
       <PokemonList />
       <FilterBar />
