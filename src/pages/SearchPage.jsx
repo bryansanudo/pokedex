@@ -14,12 +14,12 @@ const SearchPage = () => {
   );
 
   return (
-    <div className="max-w-[1200px] my-0 mx-auto">
-      <p className="mb-[30px] text-[22px] ">
+    <div className="max-w-[1200px] my-0 mx-auto md:pt-32 pt-40">
+      <p className="mb-[30px] text-[22px] text-center">
         se encontraron{" "}
         <span className="font-bold">{filteredPokemons.length}</span> resultados:
       </p>
-      <div className="grid grid-cols-[repeat(4,1fr)] gap-[20px] max-w-[1200px] my-0 mx-auto">
+      <div className="grid gap-5 md:grid-cols-4 grid-cols-3 max-w-[1200px] w-[330px] sm:w-[500px] md:w-[700px] lg:w-[1000px] my-0  mx-auto mb-20">
         {filteredPokemons.map((pokemon) => (
           <CardPokemon pokemon={pokemon} key={pokemon.id} />
         ))}

@@ -20,7 +20,7 @@ const Navigation = () => {
 
   return (
     <>
-      <div className="fixed w-full md:h-20 h-32 bg-gray-900    ">
+      <div className="fixed w-full md:h-20 h-32 bg-gray-900 z-40">
         <div className="flex flex-col md:flex-row md:justify-between gap-2  items-center max-w-screen-xl mx-auto px-10  h-full">
           <div className="flex items-center mt-2">
             <Link to="/" className="logo">

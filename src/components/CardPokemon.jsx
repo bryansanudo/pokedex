@@ -5,9 +5,9 @@ const CardPokemon = ({ pokemon }) => {
   return (
     <Link
       to={`/pokemon/${pokemon.id}`}
-      className="cursor-pointer bg-[#f2f2f2] no-underline shadow-lg shadow-gray-600"
+      className="cursor-pointer bg-[#f2f2f2] no-underline shadow-lg shadow-gray-600 hover:scale-105 duration-300 rounded-xl"
     >
-      <div className="bg-[#f2f2f2]  flex items-center justify-center rounded-[5px] h-[80px] sm:h-[150px] md:h-[200px] lg:h-[250px] hover:scale-105 duration-300 ">
+      <div className="bg-[#f2f2f2]  flex items-center justify-center rounded-[5px] h-[80px] sm:h-[150px] md:h-[200px] lg:h-[250px]  ">
         <img
           src={pokemon.sprites.other.dream_world.front_default}
           alt={`Pokemon ${pokemon.name}`}
