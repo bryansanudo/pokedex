@@ -55,7 +55,7 @@ const PokemonPage = () => {
                     </span>
                   ))}
                 </div>
-                <div className="flex justify-between mt-[20px] ">
+                <div className="flex justify-between mt-[20px] gap-4 ">
                   <div className="flex flex-col gap-[10px]">
                     <p className="font-bold text-[20px]">Altura</p>
                     <span>{pokemon.height}</span>
@@ -72,21 +72,21 @@ const PokemonPage = () => {
               <h1>Estadísticas</h1>
               <div className="flex flex-col gap-[20px] flex-[1]">
                 <div className="flex items-center gap-[20px]">
-                  <span className=" font-semibold text-[18px]">Hp</span>
+                  <span className=" font-semibold text-[18px]">Vida</span>
                   <div className="w-full" />
                   <span className="counter-stat">
                     {pokemon.stats[0].base_stat}
                   </span>
                 </div>
                 <div className="flex items-center gap-[20px]">
-                  <span className=" font-semibold text-[18px]">Attack</span>
+                  <span className=" font-semibold text-[18px]">Ataque</span>
                   <div className="w-full" />
                   <span className="counter-stat">
                     {pokemon.stats[1].base_stat}
                   </span>
                 </div>
                 <div className="flex items-center gap-[20px]">
-                  <span className=" font-semibold text-[18px]">Defense</span>
+                  <span className=" font-semibold text-[18px]">Defensa</span>
                   <div className="w-full" />
                   <span className="counter-stat">
                     {pokemon.stats[2].base_stat}
@@ -94,7 +94,7 @@ const PokemonPage = () => {
                 </div>
                 <div className="flex items-center gap-[20px]">
                   <span className=" font-semibold text-[18px]">
-                    Special Attack
+                    Ataque Especial
                   </span>
                   <div className="w-full" />
                   <span className="counter-stat">
@@ -103,7 +103,7 @@ const PokemonPage = () => {
                 </div>
                 <div className="flex items-center gap-[20px]">
                   <span className=" font-semibold text-[18px]">
-                    Special Defense
+                    Defensa Especial
                   </span>
                   <div className="w-full" />
                   <span className="counter-stat">
@@ -111,7 +111,7 @@ const PokemonPage = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-[20px]">
-                  <span className=" font-semibold text-[18px]">Speed</span>
+                  <span className=" font-semibold text-[18px]">Velocidad</span>
                   <div className="w-full" />
                   <span className="counter-stat">
                     {pokemon.stats[5].base_stat}
