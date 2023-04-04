@@ -7,11 +7,11 @@ const PokemonList = () => {
   const { allPokemons, loading, filteredPokemons } = useContext(PokemonContext);
 
   return (
-    <>
+    <div className="md:pt-32 pt-40">
       {loading ? (
         <Loader />
       ) : (
-        <div className="grid gap-5 grid-cols-[repeat(4,1fr)] max-w-[1200px] my-0  md:mx-auto ">
+        <div className="grid gap-5 md:grid-cols-4 grid-cols-3 max-w-[1200px] w-[330px] sm:w-[500px] md:w-[700px] lg:w-[1000px] my-0  mx-auto">
           {filteredPokemons.length ? (
             <>
               {filteredPokemons.map((pokemon) => (
@@ -27,7 +27,7 @@ const PokemonList = () => {
           )}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

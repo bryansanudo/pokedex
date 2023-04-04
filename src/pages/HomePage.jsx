@@ -20,7 +20,7 @@ const HomePage = () => {
       </div> */}
 
       <PokemonList />
-      <FilterBar />
+      {/* <FilterBar /> */}
 
       <div className="flex justify-center my-[20px] max-w-[1200px]  mx-auto">
         <button
